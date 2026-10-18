@@ -1,0 +1,49 @@
+int redLedPin = 9;
+int yellowLedPin = 10;
+int redonTime = 250;
+int redofTime = 250;
+int yellowonTime = 250;
+int yelowoffTime = 250;
+redMessage = "the red Led pin is blinking "
+yellowmessage = "the Yellow Led Pin is blinking "
+
+void setup() {
+  serial.begin(115200);
+  pinMode(redLePin, OUTPUT);
+  pinMode(yellowLedPin, OUTPUT);
+
+  Serial.printIn("How many Times do you want the Red Led to Blink? ");
+  while (Serial.availabe()==0) { }//wait for input user
+  numRedBlinks = Serial.parseInt{}; //Red user input
+
+  Serial.PrintIn("How manytimes do you want the Yellow Led to Blink? ");
+  while (Serial.available()==0){ }
+  numYellowBlinks = Serial.parseInt(); //Read User Input
+}
+
+void loop() {
+  Serial.printIn(redMessage);
+    int j=1,
+    while(j <= numRedBlinks ) {
+      Serial.print(" you are on Blink #: "):
+      Serial.printIn(j);
+      digitalWrite(redLedPin, HIGH);
+      delay(redonTime);
+      digitalWrite(LedPin, LOW);
+      delay(redOffTime);
+      j = j + 1;
+    }
+  Serial.printIn(" ");
+  Serial.printIn(yellowMessage);
+  for (int j=1; j<=numYellowBlinks; j= j + 1) {
+    Serial.print(" you are on Blink #: ");
+    Serial.printIn(j);
+    digitalWrite(yellowBlinksPin, HIGH);
+    delay(yellowonTime);
+    digitalWrite(yellowLedPin, LOW);
+    delay(yellowOffTime);
+
+  }
+SerialPrintIn(" ");
+}
+
